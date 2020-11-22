@@ -7,7 +7,7 @@ import { Typography } from "@material-ui/core";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import classnames from 'classnames'
+
 
 const FlightDetails=props=>{
     const [data,setData]=useState({})
@@ -31,7 +31,7 @@ const FlightDetails=props=>{
         let query={"Flight Number":response.data.flight_number,"Mission Name":response.data.mission_name,"Launch date":response.data.launch_date_utc.split("T")[0]
        ,"Launch Status":response.data.launch_success ? "SUCCESS" : "FAILED","rocket":response.data.rocket.rocket_name,"rocket Type":response.data.rocket.rocket_type
        , Ships:response.data.ships,"Details":response.data.details,}  
-       console.log(response.data)
+      
        setData(query) 
        let image=[]
        response.data.links.flickr_images.map(i=>{
@@ -72,7 +72,7 @@ let content= loading ? <CircularProgress size="150px" style={{color:"white"}}/> 
     <Grid item container direction="column" className={classes.content}>
     
    {Object.keys(data).map(key=>{
-         return  (data[key] &&  <Grid key={key} item container direction="row" className={classes.item}>
+         return  (data[key].length!==0 &&  <Grid key={key} item container direction="row" className={classes.item}>
              <Grid item md className={classes.textRight} align="center">
                  <Typography className={classes.key}>
                       {key}

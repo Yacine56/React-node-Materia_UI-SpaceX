@@ -19,6 +19,7 @@ const Main =()=>{
     axios.get("http://localhost:5000/")
     .then(response=>{
         setData(response.data)
+     
         setLoading(false)
     }).catch(err=>{
         console.log(err)
@@ -51,11 +52,13 @@ data.map(index=>{
     
     </Grid>
        <Grid item md>
-     <img src={index.links.flickr_images[1]} style={{width:"100%",height:"300px"}}/>
+     <img src={index.links.flickr_images[1]} alt="" style={{width:"100%",height:"300px"}}/>
         </Grid>
     
 </Grid>      
-    )}
+    )}else{
+        return null
+    }
 })
 
 )
@@ -64,7 +67,7 @@ return(
     
   content
    
-    )
+)
 
 
 }
