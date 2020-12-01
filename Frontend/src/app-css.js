@@ -7,7 +7,8 @@ export const useStyle=makeStyles(theme=>({
           backgroundColor:"Black",
           margin:0,
           minHeight:"60em",
-          alignItems:"center"
+          alignItems:"center",
+          paddingTop:"4em"
     },
 
 }))
