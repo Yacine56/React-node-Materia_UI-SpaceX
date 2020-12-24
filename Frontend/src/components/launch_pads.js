@@ -1,15 +1,17 @@
-import React,{useEffect,useState} from "react"
+import React,{useEffect,useState,useContext} from "react"
 import Grid from "@material-ui/core/Grid"
 import {useStyle} from "./css/main-css"
 import axios from "axios"
 import  Typography from "@material-ui/core/Typography"
 import CircularProgress from '@material-ui/core/CircularProgress';
 import GoogleMap from "./UI/google-map/google-map"
+import {context} from "../context/context"
+
 
 const Launch_pads=()=>{
  const classes=useStyle()
  const [data,setData]=useState([])
- const [loading,setLoading]=useState(false)
+ const [loading,setLoading]=useContext(context)
 
  useEffect(()=>{
    setLoading(true)

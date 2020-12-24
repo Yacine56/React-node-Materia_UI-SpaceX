@@ -5,7 +5,7 @@ export const useStyle=makeStyles(theme=>({
             color: 'white', 
             backgroundColor: "#4158D0",
             backgroundImage: "linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",
-            padding: '10px 15px',
+            padding: '5px 10px',
             display: 'inline-flex',
             textAlign: 'center',
             alignItems: 'center',
@@ -14,7 +14,7 @@ export const useStyle=makeStyles(theme=>({
             transform: 'translate(-50%, -50%)',
             border:"5px solid white",
             fontFamily:"Raleway",
-            fontSize:"0.7rem",
+            fontSize:"0.5rem",
             fontWeight:600
            }
 

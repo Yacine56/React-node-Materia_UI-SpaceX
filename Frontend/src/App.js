@@ -12,12 +12,16 @@ import image from "./assets/logo.jpg"
 import {useStyle} from "./app-css"
 import Launch_pads from './components/launch_pads';
 import Header from "./components/UI/header/header"
+import UpcomingFlights from './components/upcoming-flights';
+import {ContextProvider} from "./context/context"
+import Footer from "./components/UI/footer/footer"
+
 
 function App() {
 const classes=useStyle()
 const history=useHistory()
   return (
-    <React.Fragment>
+    <ContextProvider>
        <Header />
    <Grid container className={classes.container} direction="column">
   
@@ -30,12 +34,13 @@ const history=useHistory()
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/:id" exact component={FlightDetails} />
-        <Route path="/upcoming_flights" exact component={Launch_pads} />
+        <Route path="/up/upcoming-flights" exact component={UpcomingFlights} />
         <Route path="/pads/pads" exact component={Launch_pads} />
         <Redirect to="/" />
       </Switch>
       </Grid>
-    </React.Fragment>
+      <Footer />
+      </ContextProvider>
   );
 }
 
